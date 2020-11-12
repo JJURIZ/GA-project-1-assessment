@@ -4,8 +4,8 @@ let currentValue = document.getElementById("current_value"),
   inputValue = document.getElementById("input_value");
 
 let changeValue = (btnType) => {
-  let num1 = convertCurrentValueToInt(currentValue);
-  let num2 = convertUserValueToInt(inputValue);
+  let num1 = parseInt(convertCurrentValueToInt(currentValue));
+  let num2 = parseInt(convertUserValueToInt(inputValue));
 
   if (btnType.textContent === `-`) {
     currentValue.textContent = num1 - num2;
@@ -28,12 +28,10 @@ decrementValue.addEventListener("click", function () {
 
 const convertCurrentValueToInt = (num) => {
   let strValue = num.textContent;
-  let intValue = parseInt(strValue);
-  return intValue;
+  return strValue;
 };
 
 const convertUserValueToInt = (num) => {
   let strValue = num.value;
-  let intValue = parseInt(strValue);
-  return intValue;
+  return strValue
 };
